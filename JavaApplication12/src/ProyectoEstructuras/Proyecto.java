@@ -1,6 +1,6 @@
-package javaapplication12;
+package ProyectoEstructuras;
 
-public class JavaApplication12 {
+public class Proyecto {
     public static void main(String[] args) {
         System.out.println("Hola Mundo");
         System.out.println("Hola x2");
