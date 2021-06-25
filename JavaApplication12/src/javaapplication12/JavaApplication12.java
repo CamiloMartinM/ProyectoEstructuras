@@ -6,5 +6,4 @@ public class JavaApplication12 {
         System.out.println("Hola x2");
         System.out.println("xd");
     }
-    
 }
