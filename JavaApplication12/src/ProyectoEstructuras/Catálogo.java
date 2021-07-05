@@ -12,12 +12,21 @@ public class Catálogo extends javax.swing.JFrame {
         ImageIcon imageLupa = new ImageIcon(getClass().getResource("/recursos/lupa.png"));
         Icon fondo1 = new ImageIcon(imageLupa.getImage().getScaledInstance(lupa.getWidth(), lupa.getHeight(), Image.SCALE_DEFAULT));
         lupa.setIcon(fondo1);
-        imagenLibro1.setIcon(setIcono("/Images/iliada.png", imagenLibro1));
-        imagenLibro2.setIcon(setIcono("/Images/div.png", imagenLibro2));
-        imagenLibro3.setIcon(setIcono("/Images/elpad.png", imagenLibro3));
-        imagenLibro4.setIcon(setIcono("/Images/odisea.png", imagenLibro4));
+        
+        setIcono("/Images/iliada.jpg", imagenLibro1);
+        setIcono("/Images/div.png", imagenLibro2);
+        setIcono("/Images/elpad.png.jpg", imagenLibro3);
+        setIcono("/Images/odisea.png", imagenLibro4);
     }
 
+    public void setIcono(String url, JButton boton){
+        ImageIcon icono1 = new ImageIcon(getClass().getResource(url));
+        int ancho = boton.getWidth();
+        int alto = boton.getHeight();
+        ImageIcon icono = new ImageIcon(icono1.getImage().getScaledInstance(ancho, alto, Image.SCALE_DEFAULT));
+        boton.setIcon(icono);
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -156,11 +165,30 @@ public class Catálogo extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
 
+        imagenLibro1.setBackground(new java.awt.Color(255, 255, 255));
+        imagenLibro1.setBorderPainted(false);
+        imagenLibro1.setContentAreaFilled(false);
+        imagenLibro1.setFocusPainted(false);
         imagenLibro1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 imagenLibro1ActionPerformed(evt);
             }
         });
+
+        imagenLibro2.setBackground(new java.awt.Color(255, 255, 255));
+        imagenLibro2.setBorderPainted(false);
+        imagenLibro2.setContentAreaFilled(false);
+        imagenLibro2.setFocusPainted(false);
+
+        imagenLibro3.setBackground(new java.awt.Color(255, 255, 255));
+        imagenLibro3.setBorderPainted(false);
+        imagenLibro3.setContentAreaFilled(false);
+        imagenLibro3.setFocusPainted(false);
+
+        imagenLibro4.setBackground(new java.awt.Color(255, 255, 255));
+        imagenLibro4.setBorderPainted(false);
+        imagenLibro4.setContentAreaFilled(false);
+        imagenLibro4.setFocusPainted(false);
 
         nombreLibro1.setBackground(new java.awt.Color(255, 255, 255));
         nombreLibro1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -200,7 +228,7 @@ public class Catálogo extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+                .addContainerGap(66, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(nombreLibro1, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
                     .addComponent(imagenLibro1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -216,7 +244,7 @@ public class Catálogo extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(nombreLibro4, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
                     .addComponent(imagenLibro4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,7 +271,7 @@ public class Catálogo extends javax.swing.JFrame {
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -252,7 +280,7 @@ public class Catálogo extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1018, Short.MAX_VALUE)
+            .addGap(0, 1043, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,7 +295,7 @@ public class Catálogo extends javax.swing.JFrame {
         jScrollPane3.setForeground(new java.awt.Color(255, 255, 255));
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setToolTipText("");
-        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -276,7 +304,7 @@ public class Catálogo extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1018, Short.MAX_VALUE)
+            .addGap(0, 1043, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,7 +318,7 @@ public class Catálogo extends javax.swing.JFrame {
         jScrollPane4.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane4.setForeground(new java.awt.Color(255, 255, 255));
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -299,7 +327,7 @@ public class Catálogo extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1018, Short.MAX_VALUE)
+            .addGap(0, 1043, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -314,10 +342,7 @@ public class Catálogo extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pestanas)
-                .addContainerGap())
+            .addComponent(pestanas, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -387,14 +412,6 @@ public class Catálogo extends javax.swing.JFrame {
                 new Catálogo().setVisible(true);
             }
         });
-    }
-    
-    public Icon setIcono(String url, JButton boton){
-        ImageIcon icono1 = new ImageIcon(getClass().getResource(url));
-        int ancho = boton.getWidth();
-        int alto = boton.getHeight();
-        ImageIcon icono = new ImageIcon(icono1.getImage().getScaledInstance(ancho, alto, Image.SCALE_DEFAULT));
-        return icono;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
