@@ -152,7 +152,6 @@ public class Catálogo extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         pestanas.setBackground(new java.awt.Color(126, 217, 86));
-        pestanas.setForeground(new java.awt.Color(0, 0, 0));
         pestanas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pestanas.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         pestanas.setName(""); // NOI18N
@@ -192,7 +191,6 @@ public class Catálogo extends javax.swing.JFrame {
 
         nombreLibro1.setBackground(new java.awt.Color(255, 255, 255));
         nombreLibro1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        nombreLibro1.setForeground(new java.awt.Color(0, 0, 0));
         nombreLibro1.setText("La Ilíada");
         nombreLibro1.setBorder(null);
         nombreLibro1.setBorderPainted(false);
@@ -201,7 +199,6 @@ public class Catálogo extends javax.swing.JFrame {
 
         nombreLibro2.setBackground(new java.awt.Color(255, 255, 255));
         nombreLibro2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        nombreLibro2.setForeground(new java.awt.Color(0, 0, 0));
         nombreLibro2.setText("La Divina Comedia");
         nombreLibro2.setBorder(null);
         nombreLibro2.setBorderPainted(false);
@@ -209,7 +206,6 @@ public class Catálogo extends javax.swing.JFrame {
 
         nombreLibro3.setBackground(new java.awt.Color(255, 255, 255));
         nombreLibro3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        nombreLibro3.setForeground(new java.awt.Color(0, 0, 0));
         nombreLibro3.setText("El Padrino");
         nombreLibro3.setBorder(null);
         nombreLibro3.setBorderPainted(false);
@@ -217,7 +213,6 @@ public class Catálogo extends javax.swing.JFrame {
 
         nombreLibro4.setBackground(new java.awt.Color(255, 255, 255));
         nombreLibro4.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        nombreLibro4.setForeground(new java.awt.Color(0, 0, 0));
         nombreLibro4.setText("La Odisea");
         nombreLibro4.setBorder(null);
         nombreLibro4.setBorderPainted(false);
@@ -261,7 +256,7 @@ public class Catálogo extends javax.swing.JFrame {
                     .addComponent(nombreLibro2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(nombreLibro3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(nombreLibro4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel4);
@@ -284,7 +279,7 @@ public class Catálogo extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addGap(0, 295, Short.MAX_VALUE)
         );
 
         jScrollPane2.setViewportView(jPanel5);
@@ -308,7 +303,7 @@ public class Catálogo extends javax.swing.JFrame {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addGap(0, 295, Short.MAX_VALUE)
         );
 
         jScrollPane3.setViewportView(jPanel6);
@@ -331,7 +326,7 @@ public class Catálogo extends javax.swing.JFrame {
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 283, Short.MAX_VALUE)
+            .addGap(0, 295, Short.MAX_VALUE)
         );
 
         jScrollPane4.setViewportView(jPanel7);
@@ -347,8 +342,8 @@ public class Catálogo extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(pestanas)
-                .addContainerGap())
+                .addComponent(pestanas, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
