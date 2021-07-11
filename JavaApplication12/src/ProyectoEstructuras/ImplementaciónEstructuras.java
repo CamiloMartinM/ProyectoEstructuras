@@ -5,9 +5,9 @@ public class ImplementaciónEstructuras {
     static class ListaEnlazada{
 
     class Node{
-        char data;
+        Libro data;
         Node next;
-        public Node(char data){
+        public Node(Libro data){
             this.data = data;
             next = null;
         }
@@ -22,13 +22,13 @@ public class ImplementaciónEstructuras {
             head=null;
         }
 
-        public void pushFront(char data){
+        public void pushFront(Libro data){
             Node nodo = new Node(data);
             nodo.next = head;
             head = nodo;
         }
                
-        public void pushBack(char data) {
+        public void pushBack(Libro data) {
             Node nodo = new Node(data);
 
             if (head == null) {
@@ -42,10 +42,10 @@ public class ImplementaciónEstructuras {
             }
             last.next = nodo;
         }
-
-        Character popBack(){
+        /*
+        Libro popBack(){
             Node temp = head;
-            char c = ' ';
+            Libro c = new Libro("","",0,"");
             if(head==null){
                 c = ' ';
             }
@@ -56,6 +56,7 @@ public class ImplementaciónEstructuras {
             temp.data = ' ';
             return c;
         }
+        */
 
         void deleteNode(int position) {
             if (head == null)
@@ -82,7 +83,7 @@ public class ImplementaciónEstructuras {
             return head==null;
         }
 
-        void setValue(int position, char cambiar){
+        void setValue(int position, Libro cambiar){
            Node temp = head;
            for(int i=0; i<position; i++){
                temp=temp.next;
@@ -90,7 +91,7 @@ public class ImplementaciónEstructuras {
             temp.data = cambiar;
         }
 
-        Character getValue(int position) {
+        Libro getValue(int position) {
             Node temp = head;
             for(int i=0; i<(position-1);i++){
                 temp = temp.next;
@@ -140,7 +141,7 @@ public class ImplementaciónEstructuras {
             this.top = null;
         }
         
-        public void push(char x){
+        public void push(Libro x){
             Node temp = new Node();
             temp.data = x;
             temp.next = top;
@@ -151,12 +152,12 @@ public class ImplementaciónEstructuras {
             return top == null;
         }
 
-        public char peek(){
+        public Libro peek(){
             return top.data;
         }
 
-        Character pop(){
-            char c = top.data;
+        Libro pop(){
+            Libro c = top.data;
             top = top.next;
             return c;
         }

@@ -2,6 +2,7 @@ package ProyectoEstructuras;
 
 import ProyectoEstructuras.ImplementaciónEstructuras.AVLTree;
 import ProyectoEstructuras.ImplementaciónEstructuras.Node;
+import ProyectoEstructuras.ImplementaciónEstructuras.Pila;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -418,10 +419,13 @@ public class Catálogo2 extends javax.swing.JFrame {
       TInicio = 0; TFin = 0; tiempo=0;
     }//GEN-LAST:event_sortByPriceActionPerformed
 
+    Pila pilaDeshacer = new Pila();
+    
     private void deleteBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBookActionPerformed
 
        TInicio = System.nanoTime();
        tree.deleteNode(tree.root, libroprueba);
+       pilaDeshacer.push(libroprueba);
        TFin = System.nanoTime();
        numDatos--;
        owo=0;
@@ -441,7 +445,8 @@ public class Catálogo2 extends javax.swing.JFrame {
     }//GEN-LAST:event_tabladatosMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        tree.root = tree.insertNode(tree.root, pilaDeshacer.pop());
+        inOrderSort(tree.root, matriz);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
