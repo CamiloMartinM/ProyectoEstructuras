@@ -2,6 +2,7 @@
 package ProyectoEstructuras;
 
 public class ImplementaciónEstructuras {
+    
     static class ListaEnlazada{
 
     class Node{

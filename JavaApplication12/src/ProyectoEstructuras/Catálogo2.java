@@ -7,6 +7,7 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 public class Catálogo2 extends javax.swing.JFrame {
 
@@ -15,50 +16,46 @@ public class Catálogo2 extends javax.swing.JFrame {
         mostrar(tree);
         System.out.println("Análisis con "+numDatos+" datos");
     }
-    Libro libroprueba = new Libro("XD","Camilo",123456,"EstructuraZzz");
+    Libro libroprueba = new Libro("Cien Años de Soledad","Garcia Marquez",123456,"Panamericana");
       public void mostrar(AVLTree tree){
         String matriz[][]=new String[numDatos][4];
         tree.root = tree.insertNode(tree.root, libroprueba);
         for(int i=0;i<numDatos-1;i++){
-            Libro libro = new Libro("Calculo","Pecha",(int) Math.floor(Math.random()*921351532),"Matemáticas");
+            Libro libro = new Libro("Calculo","Stewart",(int) Math.floor(Math.random()*921351532),"Norma");
             tree.root = tree.insertNode(tree.root, libro);
-      // matriz[i][0]=libro.getNombre();
-      //  matriz[i][1]=libro.getAutor();
-      //  matriz[i][2]=String.valueOf(libro.getPrecio());
-      //  matriz[i][3]=libro.getCategoria();
+            matriz[i][0]=libro.getNombre();
+            matriz[i][1]=libro.getAutor();
+            matriz[i][2]=String.valueOf(libro.getPrecio());
+            matriz[i][3]=libro.getCategoria();
        }
 
-     // tabladatos.setModel(new javax.swing.table.DefaultTableModel(
-      //  matriz,
-        //new String [] {
-          //    "Nombre", "Autor", "Precio","Categoría" 
-         //}
-       //));
+      tabladatos.setModel(new javax.swing.table.DefaultTableModel(
+      matriz,
+      new String [] {
+        "Nombre", "Autor", "Precio","Categoría" 
+      }
+      ));
 
     }
       
       
     public void inOrderSort(Node node, String[][] matriz) {
-    if (node == null) {
-      return;
-      
+        if (node == null) {
+          return;
+        }
+        inOrderSort(node.left, matriz);
+        matriz[owo][0]=node.item.getNombre();
+        matriz[owo][1]=node.item.getAutor();
+        matriz[owo][2]=String.valueOf(node.item.getPrecio());
+        matriz[owo][3]=node.item.getCategoria();
+        tabladatos.setModel(new javax.swing.table.DefaultTableModel(matriz,new String [] {"Nombre", "Autor", "Precio","Categoría"}
+        ));
+        owo++;
+        inOrderSort(node.right, matriz);
     }
-    inOrderSort(node.left, matriz);
-    //matriz[owo][0]=node.item.getNombre();
-    //matriz[owo][1]=node.item.getAutor();
-    //matriz[owo][2]=String.valueOf(node.item.getPrecio());
-    //matriz[owo][3]=node.item.getCategoria();
-    //     tabladatos.setModel(new javax.swing.table.DefaultTableModel(
-    //       matriz,
-    //        new String [] {
-    //            "Nombre", "Autor", "Precio","Categoría" 
-    //        }
-    //    ));
-    //owo++;
-    inOrderSort(node.right, matriz);
-}
+    
    long TInicio, TFin, tiempo;
-    int numDatos = 25000000;
+    int numDatos = 100;
       String matriz[][]=new String[numDatos][4];
       AVLTree tree = new AVLTree();
       int owo = 0;
@@ -397,43 +394,55 @@ public class Catálogo2 extends javax.swing.JFrame {
 
     private void addBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBookActionPerformed
       TInicio = System.nanoTime();
-      Libro libro = new Libro("SIUUU","SIUUU",(int) Math.floor(Math.random()*1516516),"SIUUU" );
+      Libro libro = new Libro("La Maria", "Jorge Isaacs",(int) Math.floor(Math.random()*1516516),"Panamericana" );
       tree.root = tree.insertNode(tree.root, libro);
       TFin = System.nanoTime();
       numDatos++;
-      String matriz[][]=new String[numDatos][4];
       owo=0;
-
+      String matriz[][]=new String[numDatos][4];
       tiempo = TFin - TInicio;
       System.out.println("Tiempo de ejecución en nanosegundos de añadir: " + tiempo);
-       TInicio = 0; TFin = 0; tiempo=0;
+      TInicio = 0; TFin = 0; tiempo=0;
     }//GEN-LAST:event_addBookActionPerformed
 
     private void sortByPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortByPriceActionPerformed
      owo = 0;
      TInicio = System.nanoTime();
+     String matriz[][]=new String[numDatos][4];
      inOrderSort(tree.root, matriz);
      TFin = System.nanoTime();
      tiempo = TFin - TInicio;
      System.out.println("Tiempo de ejecución en nanosegundos de ordenar (buscar): " + tiempo);
-      TInicio = 0; TFin = 0; tiempo=0;
+     TInicio = 0; TFin = 0; tiempo=0;
     }//GEN-LAST:event_sortByPriceActionPerformed
 
     Pila pilaDeshacer = new Pila();
     
     private void deleteBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBookActionPerformed
-
-       TInicio = System.nanoTime();
-       tree.deleteNode(tree.root, libroprueba);
-       pilaDeshacer.push(libroprueba);
-       TFin = System.nanoTime();
-       numDatos--;
-       owo=0;
-       String matriz[][]=new String[numDatos][4];
- 
-       tiempo = TFin - TInicio;
-       System.out.println("Tiempo de ejecución en nanosegundos de borrar: " + tiempo);
-       TInicio = 0; TFin = 0;tiempo=0;
+       try{
+           if(nombre==null){
+               throw new Exception();
+           }else{
+            TInicio = System.nanoTime();
+            Libro libroaborrar = new Libro(nombre, autor, precio, categoria);
+            tree.deleteNode(tree.root, libroaborrar);
+            pilaDeshacer.push(libroaborrar);
+            TFin = System.nanoTime();
+            numDatos--;
+            owo=0;
+            String matriz[][]=new String[numDatos][4];
+            tiempo = TFin - TInicio;
+            System.out.println("Tiempo de ejecución en nanosegundos de borrar: " + tiempo);
+            TInicio = 0; TFin = 0;tiempo=0;
+            inOrderSort(tree.root, matriz);
+            nombre = null;
+            autor = null;
+            precio = 0;
+            categoria = null;
+           }
+        }catch(Exception nullP){
+           JOptionPane.showMessageDialog(this, "Haga una selcción valida");
+       }
     }//GEN-LAST:event_deleteBookActionPerformed
 
     private void tabladatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabladatosMouseClicked
@@ -445,8 +454,14 @@ public class Catálogo2 extends javax.swing.JFrame {
     }//GEN-LAST:event_tabladatosMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        tree.root = tree.insertNode(tree.root, pilaDeshacer.pop());
+        try{tree.root = tree.insertNode(tree.root, pilaDeshacer.pop());
+        numDatos++;
+        owo=0;
+        String matriz[][]=new String[numDatos][4];
         inOrderSort(tree.root, matriz);
+        }catch(Exception nullP){
+           JOptionPane.showMessageDialog(this, "Opcion no valida");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
