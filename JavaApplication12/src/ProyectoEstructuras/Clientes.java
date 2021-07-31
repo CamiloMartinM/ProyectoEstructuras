@@ -10,7 +10,7 @@ package ProyectoEstructuras;
  * @author Nicol
  */
 public class Clientes {
-    public String celular;
+    public String correo;
     public String contra;
     public String nombre;
 
@@ -23,22 +23,22 @@ public class Clientes {
         this.nombre = nombre;
     }
 
-    public Clientes(String nombre,String celular, String contra) {
-        this.celular = celular;
+    public Clientes(String nombre,String correo, String contra) {
+        this.correo = correo;
         this.contra = contra;
         this.nombre = nombre;
     }
 
-    public void setCelular(String celular) {
-        this.celular = celular;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public void setContra(String contra) {
         this.contra = contra;
     }
 
-    public String getCelular() {
-        return celular;
+    public String getCorreo() {
+        return correo;
     }
 
     public String getContra() {

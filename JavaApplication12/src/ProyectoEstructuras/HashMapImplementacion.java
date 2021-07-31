@@ -81,6 +81,17 @@ public class HashMapImplementacion {
         }
         return null;
     }
+    public boolean notcontains(K key) {
+        Entry<K, V> bucket = buckets[getHash(key) % getBucketSize()];
+
+        while (bucket != null) {
+            if (key == bucket.key) {
+                return false;
+            }
+            bucket = bucket.next;
+        }
+        return true;
+    }
 
     public int size() {
         return size;
