@@ -9,9 +9,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
-public class Catálogo2 extends javax.swing.JFrame {
+public class CatálogoAdmin extends javax.swing.JFrame {
 
-    public Catálogo2() {
+    public CatálogoAdmin() {
         initComponents();
         mostrar(tree);
         System.out.println("Análisis con "+numDatos+" datos");
@@ -30,17 +30,13 @@ public class Catálogo2 extends javax.swing.JFrame {
             matriz[i][2]=String.valueOf(libro.getPrecio());
             matriz[i][3]=libro.getCategoria();
        }
-
       tabladatos.setModel(new javax.swing.table.DefaultTableModel(
       matriz,
       new String [] {
         "Nombre", "Autor", "Precio","Categoría" 
       }
       ));
-
     }
-      
-      
     public void inOrderSort(Node node, String[][] matriz) {
         if (node == null) {
           return;
@@ -234,18 +230,18 @@ public class Catálogo2 extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(65, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 912, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(sortByPrice)
-                        .addGap(98, 98, 98)
+                        .addGap(108, 108, 108)
                         .addComponent(deleteBook)
-                        .addGap(100, 100, 100)
+                        .addGap(93, 93, 93)
                         .addComponent(addBook)
-                        .addGap(97, 97, 97)
+                        .addGap(93, 93, 93)
                         .addComponent(jButton2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -451,8 +447,8 @@ public class Catálogo2 extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        final Catálogo2 frame = new Catálogo2();
-              frame.setExtendedState(Catálogo2.NORMAL);
+        final CatálogoAdmin frame = new CatálogoAdmin();
+              frame.setExtendedState(CatálogoAdmin.NORMAL);
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -461,18 +457,18 @@ public class Catálogo2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Catálogo2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatálogoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Catálogo2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatálogoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Catálogo2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatálogoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Catálogo2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CatálogoAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Catálogo2().setVisible(true);
+                new CatálogoAdmin().setVisible(true);
             }
         });
     }
