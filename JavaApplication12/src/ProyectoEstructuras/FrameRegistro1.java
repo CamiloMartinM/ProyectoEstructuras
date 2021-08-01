@@ -364,14 +364,17 @@ public class FrameRegistro1 extends javax.swing.JFrame {
             int m = rol.getSelectedIndex();
             switch (m){
                 case 1:
+                    System.out.println("Cliente");
+                    System.out.println("Contraseña:"+cuentasclient.get(correo.getText()));
+                    System.out.println("Correo:"+correo.getText());
                 if(names.getText().isEmpty() || m==0 || correo.getText().isEmpty() || pass1.getText().isEmpty() || pass2.getText().isEmpty()  ){
                     JOptionPane.showMessageDialog(null, "Rellene todos los campos");
-                }else if(cuentasclient.contains(correo.getText())){
+                }else if(cuentasadm.containsKey(correo.getText())==true || cuentasclient.containsKey(correo.getText())==true){
                     JOptionPane.showMessageDialog(null, "Este correo ya ha sido registrado");
                 }else if(!pass1.getText().equals(pass2.getText())){
                     JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
                 }else{
-                    String mail = correo.getText().toLowerCase();
+                    String mail = correo.getText();
                     String cont = pass1.getText();
                     Clientes cuentanueva = new Clientes(names.getText(),mail, cont);
                     saveUsingPush1(cuentanueva);
@@ -379,14 +382,17 @@ public class FrameRegistro1 extends javax.swing.JFrame {
                 }
                 break;
                 case 2:
+                    System.out.println("Cliente");
+                    System.out.println("Contraseña:"+cuentasadm.get(correo.getText()));
+                    System.out.println("Correo:"+correo.getText());
                 if(names.getText().isEmpty() || m==0 || correo.getText().isEmpty() || pass1.getText().isEmpty() || pass2.getText().isEmpty() ){
                     JOptionPane.showMessageDialog(null, "Rellene todos los campos");
-                }else if(cuentasadm.contains(correo.getText())){
+                }else if(cuentasadm.containsKey(correo.getText()) || cuentasclient.containsKey(correo.getText())){
                     JOptionPane.showMessageDialog(null, "Este correo ya ha sido registrado");
                 }else if(!pass1.getText().equals(pass2.getText())){
                     JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
                 }else{
-                    String mail2 = correo.getText().toLowerCase();
+                    String mail2 = correo.getText();
                     String cont2 = pass1.getText();
                     Admins cuentanueva2 = new Admins(names.getText(), mail2, cont2);
                     saveUsingPush2(cuentanueva2);

@@ -42,7 +42,10 @@ public class FrameIngresar1 extends javax.swing.JFrame {
             @Override
             public void onChildAdded(DataSnapshot snapshot, String previousChildName) {             
                Clientes newPost = snapshot.getValue(Clientes.class);
+                
                cuentasclient.put(newPost.getCorreo(), newPost.getContra());
+               System.out.println(newPost.getCorreo());
+                System.out.println(newPost.getContra());
             }
             @Override
             public void onChildChanged(DataSnapshot snapshot, String previousChildName) {              
@@ -66,6 +69,8 @@ public class FrameIngresar1 extends javax.swing.JFrame {
             public void onChildAdded(DataSnapshot snapshot, String previousChildName) {             
                Admins newPost = snapshot.getValue(Admins.class);
                cuentasadm.put(newPost.getCorreo(), newPost.getContra());
+               System.out.println(newPost.getCorreo());
+                System.out.println(newPost.getContra());
             }
             @Override
             public void onChildChanged(DataSnapshot snapshot, String previousChildName) {              
@@ -297,7 +302,7 @@ public class FrameIngresar1 extends javax.swing.JFrame {
         if((m.isEmpty()) || n.isEmpty()){
             JOptionPane.showMessageDialog(this, "Rellene todos los campos");
         }else{        
-            if(cuentasadm.contains(m) || cuentasclient.contains(m)){
+            if(cuentasadm.containsKey(m) || cuentasclient.containsKey(m)){
                 System.out.println(cuentasadm.get(m));
               if(n.equals((cuentasadm.get(m)))){   
                 CatálogoAdmin next1 = new CatálogoAdmin();

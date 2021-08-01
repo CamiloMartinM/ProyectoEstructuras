@@ -74,7 +74,7 @@ public class HashMapImplementacion {
         Entry<K, V> bucket = buckets[getHash(key) % getBucketSize()];
 
         while (bucket != null) {
-            if (key == bucket.key) {
+            if (key.equals(bucket.key)) {
                 return bucket.value;
             }
             bucket = bucket.next;
@@ -82,11 +82,11 @@ public class HashMapImplementacion {
         return null;
     }
     
-    public boolean notcontains(K key) {
+    public boolean notcontainsKey(K key) {
         Entry<K, V> bucket = buckets[getHash(key) % getBucketSize()];
 
         while (bucket != null) {
-            if (key == bucket.key) {
+          if (key.equals(bucket.key)) {
                 return false;
             }
             bucket = bucket.next;
@@ -94,11 +94,11 @@ public class HashMapImplementacion {
         return true;
     }
     
- public boolean contains(K key) {
+ public boolean containsKey(K key) {
         Entry<K, V> bucket = buckets[getHash(key) % getBucketSize()];
 
         while (bucket != null) {
-            if (key == bucket.key) {
+         if (key.equals(bucket.key)) {
                 return true;
             }
             bucket = bucket.next;
